@@ -27,7 +27,7 @@ class Event {
         //need to parse eventDate to get date and not the start time.
 
         let eventStartTime = jsonDictionary["start_time"] as? String
-        let eventImageUrl = jsonDictionary["images"] as? String
+        let eventImageUrl = jsonDictionary["image"] as? String
         
         self.eventTitle = eventTitle
         self.eventVenueName = eventVenueName

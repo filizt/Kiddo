@@ -37,6 +37,7 @@ class EventfulAPI {
     }
 
     func fetchEvents(completion: @escaping FetchEventsCompletion) {
+        configureURL()
         self.urlComponents.path = "/json/events/search"
         self.urlComponents.queryItems?.append(URLQueryItem(name:"c", value: "family_fun_kids"))
         self.urlComponents.queryItems?.append(URLQueryItem(name:"location", value: "seattle"))
@@ -57,11 +58,23 @@ class EventfulAPI {
 
             do {
 
-                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any], let events = json["events"] as? [[String: Any]] {
-                    var events = [Event]()
+                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
 
+                    print("See if this line executes")
+
+                    if let events = json["events"] as? [String: Any] {
+                        if let eventsArray = events["event"] as? [[String:Any]] {
+
+                            var eventsList = [Event]()
+                                for eachEvent in eventsArray {
+                                    let event = Event(jsonDictionary: eachEvent)
+                                   eventsList.append(event!)
+                                    //eventsLista.app
+                                }
+                    print(json)
+                    }
+                    }
                 }
-
             } catch {
                 //handle error here
             }
