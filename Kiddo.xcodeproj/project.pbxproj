@@ -13,6 +13,7 @@
 		BD68B9AE1DD0F2F300CE39CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD68B9AD1DD0F2F300CE39CA /* Assets.xcassets */; };
 		BD68B9B11DD0F2F300CE39CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD68B9AF1DD0F2F300CE39CA /* LaunchScreen.storyboard */; };
 		BD68B9BF1DD0FA1C00CE39CA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD68B9BE1DD0FA1C00CE39CA /* DetailViewController.swift */; };
+		BD68B9C91DD1296E00CE39CA /* EventfulAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD68B9C81DD1296E00CE39CA /* EventfulAPI.swift */; };
 		C26E626F1DD1038C00BDC568 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26E626E1DD1038C00BDC568 /* TimelineViewController.swift */; };
 		C26E62711DD103B900BDC568 /* eventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26E62701DD103B900BDC568 /* eventCell.xib */; };
 		C26E62731DD1098600BDC568 /* EventTableViewNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26E62721DD1098600BDC568 /* EventTableViewNib.swift */; };
@@ -28,6 +29,7 @@
 		BD68B9B01DD0F2F300CE39CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD68B9B21DD0F2F300CE39CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD68B9BE1DD0FA1C00CE39CA /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BD68B9C81DD1296E00CE39CA /* EventfulAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventfulAPI.swift; sourceTree = "<group>"; };
 		C26E626E1DD1038C00BDC568 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		C26E62701DD103B900BDC568 /* eventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = eventCell.xib; path = ../eventCell.xib; sourceTree = "<group>"; };
 		C26E62721DD1098600BDC568 /* EventTableViewNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewNib.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			children = (
 				C26E62741DD111AF00BDC568 /* Event.swift */,
 				C26E62701DD103B900BDC568 /* eventCell.xib */,
+				BD68B9C81DD1296E00CE39CA /* EventfulAPI.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C26E62731DD1098600BDC568 /* EventTableViewNib.swift in Sources */,
+				BD68B9C91DD1296E00CE39CA /* EventfulAPI.swift in Sources */,
 				BD68B9BF1DD0FA1C00CE39CA /* DetailViewController.swift in Sources */,
 				BD68B9A71DD0F2F300CE39CA /* AppDelegate.swift in Sources */,
 				50584E071DD122ED00A2BEA9 /* UIExtensions.swift in Sources */,

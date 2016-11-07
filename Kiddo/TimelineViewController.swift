@@ -22,6 +22,11 @@ class TimelineViewController: UIViewController {
         self.timelineTableView.estimatedRowHeight = 100
         self.timelineTableView.rowHeight = UITableViewAutomaticDimension
 
+        EventfulAPI.shared.fetchEvents { (events) in
+            print("Boom")
+        }
+        
+
     }
 
 
