@@ -2,25 +2,31 @@
 //  TimeLineViewController.swift
 //  Kiddo
 //
-//  Created by Filiz Kurban on 11/7/16.
+//  Created by Rachael A Helsel on 11/7/16.
 //  Copyright © 2016 Filiz Kurban. All rights reserved.
 //
 
 import UIKit
 
-class TimeLineViewController: UIViewController {
+class TimelineViewController: UIViewController {
+
+
+    @IBOutlet weak var timelineTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let nib = UINib(nibName: "eventCell", bundle: Bundle.main)
+
+        self.timelineTableView.register(nib, forCellReuseIdentifier: EventTableViewNib.identifier())
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     /*
     // MARK: - Navigation
