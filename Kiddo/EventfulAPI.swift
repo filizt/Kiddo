@@ -26,24 +26,52 @@ class EventfulAPI {
 
     static let shared = EventfulAPI()
 
-    var urlComponents:URLComponents
+    private var session: URLSession
+    private var urlComponents: URLComponents
 
     private init() {
+        self.session = URLSession(configuration: .ephemeral)
         self.urlComponents = URLComponents()
         self.configureURL()
+
     }
 
-    func fetchEvents(completion: FetchEventsCompletion) {
-        self.urlComponents.path = "/json/events/search?"
-        self.urlComponents.queryItems = [URLQueryItem(name:"c", value: "family_fun_kids")]
-        self.urlComponents.queryItems = [URLQueryItem(name:"location", value: "seattle")]
-        self.urlComponents.queryItems = [URLQueryItem(name:"image_sizes", value: "large")]
+    func fetchEvents(completion: @escaping FetchEventsCompletion) {
+        self.urlComponents.path = "/json/events/search"
+        self.urlComponents.queryItems?.append(URLQueryItem(name:"c", value: "family_fun_kids"))
+        self.urlComponents.queryItems?.append(URLQueryItem(name:"location", value: "seattle"))
+        self.urlComponents.queryItems?.append(URLQueryItem(name:"image_sizes", value: "large"))
 
         print(urlComponents.url)
 
-        var events = [Event]()
 
-        completion(events)
+        guard let url = urlComponents.url else { completion(nil);  return }
+
+        self.session.dataTask(with: url, completionHandler: {(data, response, error) in
+            if error != nil { completion(nil); return }
+
+            guard let data = data else { completion(nil); return }
+
+            print("printing data")
+            print(data)
+
+            do {
+
+                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any], let events = json["events"] as? [[String: Any]] {
+                    var events = [Event]()
+
+                }
+
+            } catch {
+                //handle error here
+            }
+
+
+        }).resume()
+
+
+
+
 
     }
 

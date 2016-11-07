@@ -28,12 +28,12 @@ class EventTableViewNib: UITableViewCell {
     var event: Event! {
         didSet {
             
-            self.eventTitle.text = event.eventTitle
-//            self.eventImage.text = event.eventImage
-            self.eventLocation.text = event.eventLocation
-            self.eventDate.text = event.eventDate
-            self.eventPrice.text = event.eventPrice
-            self.eventTime.text = event.eventTime
+           // self.eventTitle.text = event.eventTitle
+//         self.eventImage.text = event.eventImage
+           //self.eventLocation.text = event.eventLocation
+            //self.eventDate.text = event.eventDate
+            //self.eventPrice.text = event.eventPrice
+            //self.eventTime.text = event.eventTime
             
             
             

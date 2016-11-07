@@ -11,26 +11,29 @@ import Foundation
 class Event {
 
     let eventTitle: String
-    let eventLocation: String
     let eventDate: String
-    let eventTime: String
-    let eventPrice: String
-    let eventImage: String
+    let eventVenueName: String?
+    let eventStartTime: String?
+    //let eventPrice: String?
+    let eventImageUrl: String?
+    //let eventAddress: String?
+    //let eventDescription: String?
+
 
     init?(jsonDictionary: [String: Any]) {
         if let eventTitle = jsonDictionary["title"] as? String,
-        let eventLocation = jsonDictionary["pretty_name"] as? String,
-        let eventDate = jsonDictionary["mf_start_time"] as? String,
-        let eventTime = jsonDictionary["tf_start_time"] as? String,
-        let eventPrice = jsonDictionary["price"] as? String,
-            let eventImage = jsonDictionary["_list_images"] as? String {
+            let eventVenueName = jsonDictionary["venue_name"] as? String,
+            let eventDate = jsonDictionary["start_time"] as? String {
+        //need to parse eventDate to get date and not the start time.
+
+        let eventStartTime = jsonDictionary["start_time"] as? String
+        let eventImageUrl = jsonDictionary["images"] as? String
         
         self.eventTitle = eventTitle
-        self.eventLocation = eventLocation
+        self.eventVenueName = eventVenueName
         self.eventDate = eventDate
-        self.eventTime = eventTime
-        self.eventPrice = eventPrice
-        self.eventImage = eventImage
+        self.eventStartTime = eventStartTime
+        self.eventImageUrl = eventImageUrl
             
         } else {
         
