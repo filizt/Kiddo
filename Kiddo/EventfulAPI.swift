@@ -61,18 +61,20 @@ class EventfulAPI {
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
 
                     print("See if this line executes")
-
+                    var eventsList = [Event]()
                     if let events = json["events"] as? [String: Any] {
                         if let eventsArray = events["event"] as? [[String:Any]] {
 
-                            var eventsList = [Event]()
+
                                 for eachEvent in eventsArray {
                                     let event = Event(jsonDictionary: eachEvent)
                                    eventsList.append(event!)
                                     //eventsLista.app
+
                                 }
-                    print(json)
-                    }
+                            print(json)
+                        }
+                        completion(eventsList)
                     }
                 }
             } catch {

@@ -13,6 +13,8 @@ class TimelineViewController: UIViewController {
 
     @IBOutlet weak var timelineTableView: UITableView!
 
+    var events = [Event]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,9 +25,8 @@ class TimelineViewController: UIViewController {
         self.timelineTableView.rowHeight = UITableViewAutomaticDimension
 
         EventfulAPI.shared.fetchEvents { (events) in
-            print("Boom")
+            self.events = events!
         }
-        
 
     }
 
