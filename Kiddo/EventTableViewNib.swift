@@ -31,7 +31,6 @@ class EventTableViewNib: UITableViewCell {
         didSet {
             
             self.eventTitle.text = event.eventTitle
-//            self.eventImage.text = event.eventImage
             self.eventVenueName.text = event.eventVenueName
             self.eventDate.text = event.eventDate
             self.eventPrice.text = event.eventPrice

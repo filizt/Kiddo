@@ -21,6 +21,15 @@ class TimelineViewController: UIViewController {
     }
     
 
+    var defaultImagesList = [UIImage]()
+
+    //image cache
+    var imageCache = [String: UIImage]() {
+        didSet {
+            self.timelineTableView.reloadData()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,15 +44,26 @@ class TimelineViewController: UIViewController {
         
         //This needed to be added to the main queue because fetchEvents was running asynchronously and was getting the data after viewDidLoad was done.
         EventfulAPI.shared.fetchEvents { (events) in
-            OperationQueue.main.addOperation {
-                self.events = events!
-            }
-            
-        }
+            self.events = events!
 
+            for eachEvent in self.events {
+                 EventfulAPI.shared.fetchEventPhoto(event: eachEvent, completion: { (image) in
+                    if image != nil {
+                        self.imageCache[eachEvent.eventImageUrl!] = image
+                    } else {
+                        //assing a placeholder image
+                    }
+                 })
+            }
+        }
+        self.loadDefaultImages()
+    }
+
+    func loadDefaultImages() {
+        self.defaultImagesList.append(UIImage(named: "kiddo_default_2")!)
+        self.defaultImagesList.append(UIImage(named: "kiddo_default_1")!)
     }
 }
-
 extension TimelineViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,7 +75,19 @@ extension TimelineViewController: UITableViewDataSource, UITableViewDelegate {
         
         let currentEvent = self.events[indexPath.row]
         cell.event = currentEvent
-        
+        if currentEvent.eventImageUrl != nil {
+            cell.eventImage.image = imageCache[currentEvent.eventImageUrl!]
+        } else {
+            if indexPath.row == 0 {
+                cell.eventImage.image = defaultImagesList[0]
+            } else {
+                cell.eventImage.image = defaultImagesList[Int(indexPath.row % defaultImagesList.count)]
+            }
+        }
+
+        cell.eventImage.contentMode = UIViewContentMode.scaleAspectFill
+        print("****Event Name****", currentEvent.eventDate )
+
         return cell
     }
 }

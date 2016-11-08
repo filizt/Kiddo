@@ -39,8 +39,27 @@ class Event {
         }
             
         
-        let eventImageUrl = jsonDictionary["image"] as? String
-        
+        if let eventImageUrls = jsonDictionary["image"] as? [String:Any] {
+            let key:String = eventImageUrls.keys.first!
+            let eventImageUrlObject: [String: Any]
+
+            switch key {
+            case "large":
+                eventImageUrlObject = eventImageUrls["large"] as! [String: Any]
+                let eventImageUrl = eventImageUrlObject["url"] as? String
+                self.eventImageUrl = eventImageUrl
+            case "medium":
+                eventImageUrlObject = eventImageUrls["medium"] as! [String: Any]
+                let eventImageUrl = eventImageUrlObject["url"] as? String
+                self.eventImageUrl = eventImageUrl
+            default:
+                self.eventImageUrl = nil
+                print("Default case hit while extracting image URL from JSON")
+            }
+        } else {
+            self.eventImageUrl = nil
+        }
+
         self.eventTitle = eventTitle
         self.eventVenueName = eventVenueName
         self.eventDate = eventDate
