@@ -32,7 +32,7 @@ class EventTableViewNib: UITableViewCell {
 //            self.eventImage.text = event.eventImage
             self.eventVenueName.text = event.eventVenueName
             self.eventDate.text = event.eventDate
-//            self.eventPrice.text = event.eventPrice
+            self.eventPrice.text = event.eventPrice
 //            self.eventStartTime.text = event.eventStartTime
             
             

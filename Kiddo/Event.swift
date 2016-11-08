@@ -11,22 +11,35 @@ import Foundation
 class Event {
 
     let eventTitle: String
-    let eventDate: String
+    let eventDate: String?
     let eventVenueName: String?
     let eventStartTime: String?
-    //let eventPrice: String?
+    let eventPrice: String?
     let eventImageUrl: String?
     //let eventAddress: String?
     //let eventDescription: String?
 
 
     init?(jsonDictionary: [String: Any]) {
-        if let eventTitle = jsonDictionary["title"] as? String,
-            let eventVenueName = jsonDictionary["venue_name"] as? String,
-            let eventDate = jsonDictionary["start_time"] as? String {
-        //need to parse eventDate to get date and not the start time.
-
-        let eventStartTime = jsonDictionary["start_time"] as? String
+        
+        print(jsonDictionary)
+        
+        if let eventTitle = jsonDictionary["title"] as? String {
+            let eventVenueName = jsonDictionary["venue_name"] as? String
+            let eventDate = jsonDictionary["start_time"] as? String
+            let eventStartTime = jsonDictionary["start_time"] as? String
+        
+        // if let constants only scope down into the if statement
+        if let eventPrice = jsonDictionary["price"] as? String {
+            if eventPrice == "" {
+                self.eventPrice = "Free"
+            } else {
+                self.eventPrice = eventPrice
+            }
+        } else {
+            self.eventPrice = "Free"
+        }
+        
         let eventImageUrl = jsonDictionary["image"] as? String
         
         self.eventTitle = eventTitle
@@ -34,12 +47,13 @@ class Event {
         self.eventDate = eventDate
         self.eventStartTime = eventStartTime
         self.eventImageUrl = eventImageUrl
-            
-        } else {
         
-            return nil
-        }
+    } else {
     
+    return nil
+            
     }
+    
+ }
 
 }
