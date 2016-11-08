@@ -12,19 +12,21 @@ class DetailViewController: UIViewController {
     
     var event: Event!
     
+    @IBOutlet weak var eventDescription: UILabel!
     
+    @IBOutlet weak var eventVenueName: UILabel!
     
-    
+    @IBOutlet weak var eventStartTime: UILabel!
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Set these to the outlets soon
-//        eventTitle.text = event.eventTitle
-        //eventLocation.text = event.eventLocation
-//        eventDescription.text = event.eventDescription
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\(event.eventDescription)<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+//        Set these to the outlets soon
+        self.eventDescription.text = event.eventDescription
+        self.eventVenueName.text = event.eventVenueName
+        self.eventStartTime.text = event.eventStartTime
 
     }
 

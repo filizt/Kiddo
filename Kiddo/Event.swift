@@ -29,6 +29,7 @@ class Event {
             let eventDescription = jsonDictionary["description"] as? String
         
         // if let constants only scope down into the if statement
+            
         if let eventPrice = jsonDictionary["price"] as? String {
             if eventPrice == "" {
                 self.eventPrice = "Free"
