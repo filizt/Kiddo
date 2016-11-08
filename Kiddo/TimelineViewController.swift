@@ -63,6 +63,22 @@ class TimelineViewController: UIViewController {
         self.defaultImagesList.append(UIImage(named: "kiddo_default_2")!)
         self.defaultImagesList.append(UIImage(named: "kiddo_default_1")!)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == "showDetailView" {
+            let selectedIndex = timelineTableView.indexPathForSelectedRow!.row
+            let selectedEvent = self.events[selectedIndex]
+            
+            //if this seque is going to the DetailViewController then select a tweet
+            if let destinationViewController = segue.destination as? DetailViewController {
+                destinationViewController.event = selectedEvent
+            }
+        }
+        
+    }
+
 }
 extension TimelineViewController: UITableViewDataSource, UITableViewDelegate {
     

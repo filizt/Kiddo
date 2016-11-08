@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    var event: Event!
+    
     
     
     
@@ -18,6 +20,11 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Set these to the outlets soon
+//        eventTitle.text = event.eventTitle
+        //eventLocation.text = event.eventLocation
+//        eventDescription.text = event.eventDescription
 
     }
 
