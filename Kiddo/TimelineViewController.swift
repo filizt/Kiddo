@@ -30,9 +30,13 @@ class TimelineViewController: UIViewController {
         
         self.timelineTableView.estimatedRowHeight = 100
         self.timelineTableView.rowHeight = UITableViewAutomaticDimension
-
+        
+        //This needed to be added to the main queue because fetchEvents was running asynchronously and was getting the data after viewDidLoad was done.
         EventfulAPI.shared.fetchEvents { (events) in
-            self.events = events!
+            OperationQueue.main.addOperation {
+                self.events = events!
+            }
+            
         }
 
     }
