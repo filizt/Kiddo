@@ -6,14 +6,6 @@
 //  Copyright © 2016 Filiz Kurban. All rights reserved.
 //
 
-//
-//  EventfulAPI.swift
-//  Kiddo
-//
-//  Created by Filiz Kurban on 11/7/16.
-//  Copyright © 2016 Filiz Kurban. All rights reserved.
-//
-
 import UIKit
 
 let APP_KEY = "Sx7TVrRw7SCWzNch"
@@ -37,61 +29,65 @@ class EventfulAPI {
     }
 
     func fetchEvents(completion: @escaping FetchEventsCompletion) {
-        configureURL()
         self.urlComponents.path = "/json/events/search"
         self.urlComponents.queryItems?.append(URLQueryItem(name:"c", value: "family_fun_kids"))
         self.urlComponents.queryItems?.append(URLQueryItem(name:"location", value: "seattle"))
         self.urlComponents.queryItems?.append(URLQueryItem(name:"image_sizes", value: "large"))
 
-        print(urlComponents.url)
-
-
+        func returnToMainWith (result: [Event]?) {
+            OperationQueue.main.addOperation { completion(result) }
+        }
+        print(urlComponents.url!)
         guard let url = urlComponents.url else { completion(nil);  return }
 
         self.session.dataTask(with: url, completionHandler: {(data, response, error) in
             if error != nil { completion(nil); return }
 
-            guard let data = data else { completion(nil); return }
-
-            print("printing data")
-            print(data)
+            guard let data = data else { returnToMainWith(result: nil); return }
 
             do {
-
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-
-                    print("See if this line executes")
                     var eventsList = [Event]()
                     if let events = json["events"] as? [String: Any] {
                         if let eventsArray = events["event"] as? [[String:Any]] {
-
-
-                                for eachEvent in eventsArray {
-                                    let event = Event(jsonDictionary: eachEvent)
-                                   eventsList.append(event!)
-                                    //eventsLista.app
-
-                                }
-                            print(json)
+                            for eachEvent in eventsArray {
+                                let event = Event(jsonDictionary: eachEvent)
+                                eventsList.append(event!)
+                            }
+                            returnToMainWith(result: eventsList)
                         }
-                        completion(eventsList)
                     }
                 }
             } catch {
-                //handle error here
+                print("Error JSONSerialization.jsonObject: " + error.localizedDescription)
+                returnToMainWith(result: nil)
             }
-
-
         }).resume()
-
-
-
-
-
     }
 
     func fetchEventPhoto(event: Event, completion: @escaping FetchEventPhotoCompletion) {
 
+        func returnToMainWith (result: UIImage?) {
+            OperationQueue.main.addOperation { completion(result) }
+        }
+
+        OperationQueue().addOperation {
+            if event.eventImageUrl != nil {
+                let urlString = "https:" + event.eventImageUrl!
+                guard let url = URL(string: urlString) else { returnToMainWith(result: nil); return }
+
+                do {
+                    let data = try Data(contentsOf: url)
+                    guard let image = UIImage(data: data) else { returnToMainWith(result: nil); return }
+                    returnToMainWith(result: image)
+                } catch {
+                    print("Error initializing data through URL")
+                    returnToMainWith(result: nil)
+                }
+            } else {
+                returnToMainWith(result: nil)
+            }
+        }
     }
 
     func configureURL() {
