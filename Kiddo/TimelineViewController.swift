@@ -16,8 +16,10 @@ class TimelineViewController: UIViewController {
     var events = [Event]() {
         didSet {
             self.timelineTableView.reloadData()
+            print(">>>>>>>>>>>>>>>\(events[0].eventStartTime)<<<<<<<<<<<<<<<<<<<<<")
         }
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -22,11 +22,9 @@ class Event {
 
     init?(jsonDictionary: [String: Any]) {
         
-        print(jsonDictionary)
-        
         if let eventTitle = jsonDictionary["title"] as? String {
             let eventVenueName = jsonDictionary["venue_name"] as? String
-            let eventDate = jsonDictionary["start_time"] as? String
+            let eventDate = jsonDictionary["tmf_start_time"] as? String
             let eventStartTime = jsonDictionary["start_time"] as? String
         
         // if let constants only scope down into the if statement
@@ -39,6 +37,7 @@ class Event {
         } else {
             self.eventPrice = "Free"
         }
+            
         
         let eventImageUrl = jsonDictionary["image"] as? String
         
@@ -47,7 +46,7 @@ class Event {
         self.eventDate = eventDate
         self.eventStartTime = eventStartTime
         self.eventImageUrl = eventImageUrl
-        
+                    
     } else {
     
     return nil
