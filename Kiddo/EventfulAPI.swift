@@ -33,6 +33,9 @@ class EventfulAPI {
         self.urlComponents.queryItems?.append(URLQueryItem(name:"c", value: "family_fun_kids"))
         self.urlComponents.queryItems?.append(URLQueryItem(name:"location", value: "seattle"))
         self.urlComponents.queryItems?.append(URLQueryItem(name:"image_sizes", value: "large"))
+        self.urlComponents.queryItems?.append(URLQueryItem(name:"sort_order", value: "date"))
+        self.urlComponents.queryItems?.append(URLQueryItem(name:"sort_direction", value: "ascending"))
+
 
         func returnToMainWith (result: [Event]?) {
             OperationQueue.main.addOperation { completion(result) }
