@@ -64,7 +64,7 @@ class Event {
         self.eventVenueName = eventVenueName
         self.eventDate = eventDate
         self.eventStartTime = eventStartTime
-        self.eventImageUrl = eventImageUrl
+//        self.eventImageUrl = eventImageUrl
                     
     } else {
     
