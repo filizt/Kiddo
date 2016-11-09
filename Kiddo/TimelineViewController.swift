@@ -77,10 +77,13 @@ class TimelineViewController: UIViewController {
         if segue.identifier == "showDetailView" {
             let selectedIndex = timelineTableView.indexPathForSelectedRow!.row
             let selectedEvent = self.events[selectedIndex]
+            let currentCell = timelineTableView.cellForRow(at: timelineTableView.indexPathForSelectedRow!)! as! EventTableViewNib
             
             //if this seque is going to the DetailViewController then select a tweet
             if let destinationViewController = segue.destination as? DetailViewController {
                 destinationViewController.event = selectedEvent
+                destinationViewController.image = currentCell.eventImage?.image
+
             }
         }
         

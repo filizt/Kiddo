@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var event: Event!
+    var image: UIImage!
     
     @IBOutlet weak var eventImage: UIImageView!
     
@@ -29,6 +30,9 @@ class DetailViewController: UIViewController {
         self.eventDescription.text = event.eventDescription
         self.eventVenueName.text = event.eventVenueName
         self.eventStartTime.text = event.eventStartTime
+
+        self.eventImage.image = self.image
+        self.eventImage.contentMode = .scaleAspectFill
 
     }
 
