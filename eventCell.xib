@@ -42,18 +42,18 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EC-8o-yDl" userLabel="Price">
-                        <frame key="frameInset" minX="288" minY="23" width="58" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OI5-6J-JOr">
                         <frame key="frameInset" minX="18" minY="82" width="211" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qr0-iN-aUv">
+                        <frame key="frameInset" minX="136" minY="172" width="63" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -67,7 +67,6 @@
             <connections>
                 <outlet property="eventDate" destination="vW3-dI-w1e" id="RkU-uM-hLd"/>
                 <outlet property="eventImage" destination="seo-c7-hM8" id="IOD-Bx-GAp"/>
-                <outlet property="eventPrice" destination="9EC-8o-yDl" id="236-ce-Kex"/>
                 <outlet property="eventStartTime" destination="OI5-6J-JOr" id="dVO-CW-hki"/>
                 <outlet property="eventTitle" destination="s7f-NO-xe3" id="A3i-6j-Jun"/>
                 <outlet property="eventVenueName" destination="CQ5-XZ-pXL" id="s63-sx-Ogd"/>

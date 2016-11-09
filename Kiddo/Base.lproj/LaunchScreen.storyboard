@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kiddo" translatesAutoresizingMaskIntoConstraints="NO" id="KPT-ge-DTo">
-                                <frame key="frameInset" minX="113" minY="294" width="149" height="79"/>
+                                <frame key="frameInset" minX="118" minY="294" width="149" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

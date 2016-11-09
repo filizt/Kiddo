@@ -17,9 +17,11 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var eventDescription: UILabel!
     
-    @IBOutlet weak var eventVenueName: UILabel!
+    @IBOutlet weak var eventAddress: UILabel!
     
     @IBOutlet weak var eventStartTime: UILabel!
+    
+    
     
     
 
@@ -28,7 +30,7 @@ class DetailViewController: UIViewController {
         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\(event.eventDescription)<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
         
         self.eventDescription.text = event.eventDescription
-        self.eventVenueName.text = event.eventVenueName
+        self.eventAddress.text = event.eventAddress
         self.eventStartTime.text = event.eventStartTime
 
         self.eventImage.image = self.image
