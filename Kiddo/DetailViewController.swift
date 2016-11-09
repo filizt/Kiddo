@@ -36,6 +36,8 @@ class DetailViewController: UIViewController {
         self.eventImage.image = self.image
         self.eventImage.contentMode = .scaleAspectFill
 
+        print(event.eventDate)
+
     }
 
 

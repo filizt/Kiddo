@@ -12,7 +12,7 @@ class Event {
 
     let eventTitle: String
     let eventAddress: String?
-    let eventDate: String?
+    var eventDate: String?
     let eventVenueName: String?
     let eventStartTime: String?
 //    let eventPrice: String?
@@ -39,6 +39,7 @@ class Event {
             let eventAddress = jsonDictionary["venue_address"] as? String
             
 
+            var newTimeString:String? = nil
             var newDateString:String? = nil
             if eventDate?.isEmpty != true {
                 let dateFormatter = DateFormatter()
@@ -48,12 +49,16 @@ class Event {
                 if let date = dateFormatter.date(from: eventDate!) {
                     dateFormatter.dateFormat = "HH:mm"
                     dateFormatter.timeStyle = .short
+                    newTimeString = dateFormatter.string(from: date)
+
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    dateFormatter.timeStyle = .long
                     newDateString = dateFormatter.string(from: date)
 
                 }
             }
-
-            eventStartTime = newDateString
+            self.eventDate = newDateString
+            self.eventStartTime = newTimeString
 
 
 
@@ -94,7 +99,6 @@ class Event {
 
         self.eventTitle = eventTitle
         self.eventVenueName = eventVenueName
-        self.eventDate = eventDate
         self.eventDescription = eventDescription
         self.eventAddress = eventAddress
 //        self.eventImageUrl = eventImageUrl
