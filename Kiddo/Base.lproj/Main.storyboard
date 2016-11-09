@@ -113,6 +113,7 @@
                     <navigationItem key="navigationItem" id="L6C-hq-ggT"/>
                     <connections>
                         <outlet property="eventDescription" destination="mi9-EX-7q7" id="94M-yY-NB5"/>
+                        <outlet property="eventImage" destination="DYO-TX-Z2k" id="SZr-2k-WNH"/>
                         <outlet property="eventStartTime" destination="mbZ-2U-DBx" id="zT5-vv-1Hw"/>
                         <outlet property="eventVenueName" destination="0iF-Ph-Jpy" id="sT2-pO-RkY"/>
                     </connections>

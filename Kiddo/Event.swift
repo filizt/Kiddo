@@ -16,6 +16,9 @@ class Event {
     let eventStartTime: String?
     let eventPrice: String?
     let eventImageUrl: String?
+//    let eventImageDictionary: [
+//    String: Any]
+    
     //let eventAddress: String?
     let eventDescription: String?
 
