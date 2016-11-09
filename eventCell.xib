@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,51 +22,38 @@
                             <constraint firstAttribute="width" constant="375" id="uVB-b8-ewm"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7f-NO-xe3">
-                        <frame key="frameInset" minX="18" minY="150" width="298" height="34"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7f-NO-xe3">
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQ5-XZ-pXL">
-                        <frame key="frameInset" minX="18" minY="192" width="298" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQ5-XZ-pXL">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vW3-dI-w1e">
-                        <frame key="frameInset" minX="18" minY="121" width="211" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OI5-6J-JOr">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OI5-6J-JOr">
-                        <frame key="frameInset" minX="18" minY="82" width="211" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qr0-iN-aUv">
-                        <frame key="frameInset" minX="136" minY="172" width="63" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="s7f-NO-xe3" firstAttribute="leading" secondItem="qoZ-Vx-DOt" secondAttribute="leadingMargin" constant="10" id="0YX-52-nAd"/>
+                    <constraint firstItem="CQ5-XZ-pXL" firstAttribute="leading" secondItem="qoZ-Vx-DOt" secondAttribute="leadingMargin" constant="10" id="5dM-Gc-ePH"/>
+                    <constraint firstItem="CQ5-XZ-pXL" firstAttribute="top" secondItem="s7f-NO-xe3" secondAttribute="bottom" constant="6" id="7PK-8G-bvE"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="seo-c7-hM8" secondAttribute="bottom" id="Ma5-aa-d0d"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="s7f-NO-xe3" secondAttribute="trailing" constant="10" id="O6h-Db-d2s"/>
                     <constraint firstItem="seo-c7-hM8" firstAttribute="leading" secondItem="qoZ-Vx-DOt" secondAttribute="leading" id="Pdi-xG-dtu"/>
+                    <constraint firstItem="CQ5-XZ-pXL" firstAttribute="leading" secondItem="s7f-NO-xe3" secondAttribute="leading" id="eMJ-L5-iMJ"/>
                     <constraint firstAttribute="trailing" secondItem="seo-c7-hM8" secondAttribute="trailing" id="mit-By-qzJ"/>
+                    <constraint firstItem="OI5-6J-JOr" firstAttribute="leading" secondItem="CQ5-XZ-pXL" secondAttribute="trailing" constant="8" id="tha-mu-Ioz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="CQ5-XZ-pXL" secondAttribute="bottom" constant="5" id="z4P-jJ-eFh"/>
                     <constraint firstItem="seo-c7-hM8" firstAttribute="top" secondItem="qoZ-Vx-DOt" secondAttribute="top" id="zdx-tu-9Un"/>
+                    <constraint firstItem="OI5-6J-JOr" firstAttribute="bottom" secondItem="CQ5-XZ-pXL" secondAttribute="bottom" id="znk-KO-hhK"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="eventDate" destination="vW3-dI-w1e" id="RkU-uM-hLd"/>
                 <outlet property="eventImage" destination="seo-c7-hM8" id="IOD-Bx-GAp"/>
                 <outlet property="eventStartTime" destination="OI5-6J-JOr" id="dVO-CW-hki"/>
                 <outlet property="eventTitle" destination="s7f-NO-xe3" id="A3i-6j-Jun"/>

@@ -28,18 +28,36 @@ class Event {
         
         if let eventTitle = jsonDictionary["title"] as? String {
 
-//            if let alldayFlagSet = jsonDictionary["all_day"] as? String, alldayFlagSet == "2" {
-//                return nil
-//            }
+            if let alldayFlagSet = jsonDictionary["all_day"] as? String, alldayFlagSet == "2" {
+                return nil
+            }
 
 
             let eventVenueName = jsonDictionary["venue_name"] as? String
             let eventDate = jsonDictionary["start_time"] as? String
-            let eventStartTime = jsonDictionary["venue_name"] as? String
             let eventDescription = jsonDictionary["description"] as? String
             let eventAddress = jsonDictionary["venue_address"] as? String
             
-        
+
+            var newDateString:String? = nil
+            if eventDate?.isEmpty != true {
+                let dateFormatter = DateFormatter()
+                dateFormatter.timeZone = TimeZone(identifier: "GMT")
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+                if let date = dateFormatter.date(from: eventDate!) {
+                    dateFormatter.dateFormat = "HH:mm"
+                    dateFormatter.timeStyle = .short
+                    newDateString = dateFormatter.string(from: date)
+
+                }
+            }
+
+            eventStartTime = newDateString
+
+
+
+
         // if let constants only scope down into the if statement
             
 //        if let eventPrice = jsonDictionary["price"] as? String {
@@ -77,7 +95,6 @@ class Event {
         self.eventTitle = eventTitle
         self.eventVenueName = eventVenueName
         self.eventDate = eventDate
-        self.eventStartTime = eventStartTime
         self.eventDescription = eventDescription
         self.eventAddress = eventAddress
 //        self.eventImageUrl = eventImageUrl
@@ -89,5 +106,22 @@ class Event {
     }
     
  }
+
+    func dateFormatter(dateString: String) -> String? {
+        if dateString.isEmpty != true {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:dd"
+
+            if let date = dateFormatter.date(from: dateString) {
+                dateFormatter.dateFormat = "HH:mm:dd"
+                let newDateString = dateFormatter.string(from: date)
+                print(newDateString)
+                return newDateString
+            }
+        }
+
+        return nil
+
+    }
 
 }

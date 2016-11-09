@@ -30,7 +30,7 @@ class EventTableViewNib: UITableViewCell {
             
             self.eventTitle.text = event.eventTitle
             self.eventVenueName.text = event.eventVenueName
-            self.eventDate.text = event.eventDate
+            //self.eventDate.text = event.eventDate
             self.eventStartTime.text = event.eventStartTime
 
             
