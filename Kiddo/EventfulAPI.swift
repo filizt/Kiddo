@@ -30,12 +30,14 @@ class EventfulAPI {
 
     func fetchEvents(completion: @escaping FetchEventsCompletion) {
         self.urlComponents.path = "/json/events/search"
-        self.urlComponents.queryItems?.append(URLQueryItem(name:"c", value: "family_fun_kids"))
+        self.urlComponents.queryItems?.append(URLQueryItem(name:"category", value: "family_fun_kids"))
         self.urlComponents.queryItems?.append(URLQueryItem(name:"location", value: "seattle"))
         self.urlComponents.queryItems?.append(URLQueryItem(name:"image_sizes", value: "large"))
-        self.urlComponents.queryItems?.append(URLQueryItem(name:"sort_order", value: "date"))
+        self.urlComponents.queryItems?.append(URLQueryItem(name:"date", value: "Future"))
+        //self.urlComponents.queryItems?.append(URLQueryItem(name:"sort_order", value: "popularity"))
         self.urlComponents.queryItems?.append(URLQueryItem(name:"sort_direction", value: "ascending"))
-
+        self.urlComponents.queryItems?.append(URLQueryItem(name:"page_size", value: "50"))
+        //popularity
 
         func returnToMainWith (result: [Event]?) {
             OperationQueue.main.addOperation { completion(result) }
@@ -55,7 +57,8 @@ class EventfulAPI {
                         if let eventsArray = events["event"] as? [[String:Any]] {
                             for eachEvent in eventsArray {
                                 let event = Event(jsonDictionary: eachEvent)
-                                eventsList.append(event!)
+                                if event != nil {
+                                    eventsList.append(event!)}
                             }
                             returnToMainWith(result: eventsList)
                         }

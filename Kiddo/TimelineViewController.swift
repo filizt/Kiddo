@@ -46,6 +46,13 @@ class TimelineViewController: UIViewController {
         EventfulAPI.shared.fetchEvents { (events) in
             self.events = events!
 
+            var counter = 1
+            for eachEvent in self.events {
+                print("****Event #: ", counter)
+                counter += 1
+                print("****Event Name:", eachEvent.eventTitle)
+            }
+
             for eachEvent in self.events {
                  EventfulAPI.shared.fetchEventPhoto(event: eachEvent, completion: { (image) in
                     if image != nil {
@@ -102,7 +109,6 @@ extension TimelineViewController: UITableViewDataSource, UITableViewDelegate {
         }
 
         cell.eventImage.contentMode = UIViewContentMode.scaleAspectFill
-        print("****Event Name****", currentEvent.eventDate )
 
         return cell
     }

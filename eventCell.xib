@@ -15,7 +15,7 @@
                 <frame key="frameInset" width="375" height="231"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="seo-c7-hM8">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="seo-c7-hM8">
                         <constraints>
                             <constraint firstAttribute="height" constant="220" id="kM7-cR-dqa"/>
                             <constraint firstAttribute="width" constant="375" id="uVB-b8-ewm"/>

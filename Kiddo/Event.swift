@@ -26,6 +26,12 @@ class Event {
     init?(jsonDictionary: [String: Any]) {
         
         if let eventTitle = jsonDictionary["title"] as? String {
+
+            if let alldayFlagSet = jsonDictionary["all_day"] as? String, alldayFlagSet == "2" {
+                return nil
+            }
+
+
             let eventVenueName = jsonDictionary["venue_name"] as? String
             let eventDate = jsonDictionary["tmf_start_time"] as? String
             let eventStartTime = jsonDictionary["rf_start_time"] as? String
