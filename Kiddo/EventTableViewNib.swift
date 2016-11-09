@@ -19,11 +19,9 @@ class EventTableViewNib: UITableViewCell {
     
     @IBOutlet weak var eventDate: UILabel!
     
-    
-    @IBOutlet weak var eventPrice: UILabel!
-    
-    
     @IBOutlet weak var eventStartTime: UILabel!
+    
+    
     
     
     //Everytime this class is instantiated
@@ -33,7 +31,6 @@ class EventTableViewNib: UITableViewCell {
             self.eventTitle.text = event.eventTitle
             self.eventVenueName.text = event.eventVenueName
             self.eventDate.text = event.eventDate
-            self.eventPrice.text = event.eventPrice
             self.eventStartTime.text = event.eventStartTime
 
             
