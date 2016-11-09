@@ -50,7 +50,7 @@ class TimelineViewController: UIViewController {
             for eachEvent in self.events {
                 print("****Event #: ", counter)
                 counter += 1
-                print("****Event Name:", eachEvent.eventTitle)
+                print("****Event img url:", eachEvent.eventImageUrl)
             }
 
             for eachEvent in self.events {
@@ -102,16 +102,25 @@ extension TimelineViewController: UITableViewDataSource, UITableViewDelegate {
         let currentEvent = self.events[indexPath.row]
         cell.event = currentEvent
         if currentEvent.eventImageUrl != nil {
-            cell.eventImage.image = imageCache[currentEvent.eventImageUrl!]
-        } else {
-            if indexPath.row == 0 {
-                cell.eventImage.image = defaultImagesList[0]
-            } else {
-                cell.eventImage.image = defaultImagesList[Int(indexPath.row % defaultImagesList.count)]
+            if let image = imageCache[currentEvent.eventImageUrl!] {
+                let img = image.cropImageForTimelineView()
+                cell.eventImage.image = img.imageWithGradient()
             }
+        } else {
+
+                if indexPath.row == 0 {
+                    let img = defaultImagesList[0].cropImageForTimelineViewWithRespectToInitialSize()
+                    cell.eventImage.image = img.imageWithGradient()
+                } else {
+                    let img = defaultImagesList[Int(indexPath.row % defaultImagesList.count)].cropImageForTimelineViewWithRespectToInitialSize()
+                    cell.eventImage.image = img.imageWithGradient()
+                }
+
         }
 
-        cell.eventImage.contentMode = UIViewContentMode.scaleAspectFill
+        //cell.eventImage.contentMode = UIViewContentMode.scaleAspectFill
+
+
 
         return cell
     }

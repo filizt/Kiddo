@@ -14,6 +14,7 @@
 		BD68B9B11DD0F2F300CE39CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD68B9AF1DD0F2F300CE39CA /* LaunchScreen.storyboard */; };
 		BD68B9BF1DD0FA1C00CE39CA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD68B9BE1DD0FA1C00CE39CA /* DetailViewController.swift */; };
 		BD68B9C91DD1296E00CE39CA /* EventfulAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD68B9C81DD1296E00CE39CA /* EventfulAPI.swift */; };
+		BD68B9CB1DD39FF100CE39CA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD68B9CA1DD39FF100CE39CA /* Utility.swift */; };
 		C26E626F1DD1038C00BDC568 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26E626E1DD1038C00BDC568 /* TimelineViewController.swift */; };
 		C26E62711DD103B900BDC568 /* eventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26E62701DD103B900BDC568 /* eventCell.xib */; };
 		C26E62731DD1098600BDC568 /* EventTableViewNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26E62721DD1098600BDC568 /* EventTableViewNib.swift */; };
@@ -30,6 +31,7 @@
 		BD68B9B21DD0F2F300CE39CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD68B9BE1DD0FA1C00CE39CA /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BD68B9C81DD1296E00CE39CA /* EventfulAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventfulAPI.swift; sourceTree = "<group>"; };
+		BD68B9CA1DD39FF100CE39CA /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		C26E626E1DD1038C00BDC568 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		C26E62701DD103B900BDC568 /* eventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = eventCell.xib; path = ../eventCell.xib; sourceTree = "<group>"; };
 		C26E62721DD1098600BDC568 /* EventTableViewNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewNib.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				BD68B9BB1DD0F98F00CE39CA /* Model */,
 				BD68B9BA1DD0F98000CE39CA /* View Controller */,
 				BD68B9A61DD0F2F300CE39CA /* AppDelegate.swift */,
+				BD68B9CA1DD39FF100CE39CA /* Utility.swift */,
 				BD68B9AA1DD0F2F300CE39CA /* Main.storyboard */,
 				BD68B9AD1DD0F2F300CE39CA /* Assets.xcassets */,
 				BD68B9AF1DD0F2F300CE39CA /* LaunchScreen.storyboard */,
@@ -184,6 +187,7 @@
 				BD68B9C91DD1296E00CE39CA /* EventfulAPI.swift in Sources */,
 				BD68B9BF1DD0FA1C00CE39CA /* DetailViewController.swift in Sources */,
 				BD68B9A71DD0F2F300CE39CA /* AppDelegate.swift in Sources */,
+				BD68B9CB1DD39FF100CE39CA /* Utility.swift in Sources */,
 				50584E071DD122ED00A2BEA9 /* UIExtensions.swift in Sources */,
 				C26E626F1DD1038C00BDC568 /* TimelineViewController.swift in Sources */,
 				C26E62751DD111AF00BDC568 /* Event.swift in Sources */,
