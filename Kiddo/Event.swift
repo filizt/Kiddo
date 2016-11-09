@@ -27,9 +27,9 @@ class Event {
         
         if let eventTitle = jsonDictionary["title"] as? String {
 
-            if let alldayFlagSet = jsonDictionary["all_day"] as? String, alldayFlagSet == "2" {
-                return nil
-            }
+//            if let alldayFlagSet = jsonDictionary["all_day"] as? String, alldayFlagSet == "2" {
+//                return nil
+//            }
 
 
             let eventVenueName = jsonDictionary["venue_name"] as? String
