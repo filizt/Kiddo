@@ -22,27 +22,34 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bl0-SP-8aP">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3l0-vv-Hp5">
+                                <color key="backgroundColor" red="1" green="0.67226733665239691" blue="0.49165077870468588" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="TODAY"/>
+                                    <segment title="TOMORROW"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="switchButtonPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xcm-D6-5Jg"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bl0-SP-8aP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3xR-WY-q8J"/>
+                            <constraint firstAttribute="trailing" secondItem="3l0-vv-Hp5" secondAttribute="trailing" id="25M-IH-Nkt"/>
+                            <constraint firstItem="bl0-SP-8aP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="27" id="2XA-bV-aVK"/>
                             <constraint firstItem="bl0-SP-8aP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="42t-Ey-FKb"/>
                             <constraint firstAttribute="trailing" secondItem="bl0-SP-8aP" secondAttribute="trailing" id="7Fl-ba-4tm"/>
+                            <constraint firstItem="3l0-vv-Hp5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ArE-6R-QOt"/>
+                            <constraint firstItem="3l0-vv-Hp5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="vAx-S5-KzX"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bl0-SP-8aP" secondAttribute="bottom" id="xSn-JK-8rc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yeb-TK-yO3">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="3l0-vv-Hp5">
-                            <rect key="frame" x="8" y="7" width="359" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="TODAY"/>
-                                <segment title="TOMORROW"/>
-                            </segments>
-                        </segmentedControl>
                     </navigationItem>
                     <connections>
+                        <outlet property="switchControl" destination="3l0-vv-Hp5" id="Rsl-Mp-WeP"/>
                         <outlet property="timelineTableView" destination="bl0-SP-8aP" id="Ur3-Dv-amR"/>
                         <segue destination="voi-bg-x8q" kind="show" identifier="showDetailView" id="BeH-JL-aHl"/>
                     </connections>
