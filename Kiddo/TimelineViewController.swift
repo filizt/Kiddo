@@ -17,12 +17,10 @@ class TimelineViewController: UIViewController {
     var events = [Event]() {
         didSet {
             self.timelineTableView.reloadData()
-            print(">>>>>>>>>>>>>>>\(events[0].eventStartTime)<<<<<<<<<<<<<<<<<<<<<")
         }
     }
 
     var eventsTomorrow = [Event]()
-
     var defaultImagesList = [UIImage]()
 
     //image cache
@@ -44,8 +42,35 @@ class TimelineViewController: UIViewController {
         self.timelineTableView.estimatedRowHeight = 100
         self.timelineTableView.rowHeight = UITableViewAutomaticDimension
 
+        self.setUpNavigationBar()
 
-        //With the extension - 255 147 92
+
+        //This needed to be added to the main queue because fetchEvents was running asynchronously and was getting the data after viewDidLoad was done.
+        EventfulAPI.shared.fetchEventsForToday { (events) in
+            self.events = events!
+            for eachEvent in self.events {
+             EventfulAPI.shared.fetchEventPhoto(event: eachEvent, completion: { (image) in
+                if image != nil {
+                    self.imageCache[eachEvent.eventImageUrl!] = image
+                }
+             })
+            }
+             self.loadDefaultImages()
+        }
+
+        EventfulAPI.shared.fetchEventsForTomorrow { (eventsTomorrow) in
+            self.eventsTomorrow = eventsTomorrow!
+            for eachEvent in self.eventsTomorrow {
+                EventfulAPI.shared.fetchEventPhoto(event: eachEvent, completion: { (image) in
+                    if image != nil {
+                        self.imageCache[eachEvent.eventImageUrl!] = image
+                    }
+                })
+            }
+        }
+    }
+
+    private func setUpNavigationBar() {
         let newColor = UIColor(red: 255, green: 147, blue: 92)
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.barTintColor = newColor
@@ -54,37 +79,6 @@ class TimelineViewController: UIViewController {
         backItem.title = ""
         //navigationController?.editButtonItem = backItem
         navigationController?.navigationBar.topItem?.backBarButtonItem = backItem
-
-        //self.navigationController?.navigationBar.frame = CGRect(x:0, y:0, width:320, height:100)  // Here you can set you Width and Height for your navBar
-
-       // self.view.addSubview(navBar)
-        //var newSize:CGSize = CGSizeMake(size.width, 87)
-
-        self.title = "SEATTLE EVENTS"
-
-
-        //This needed to be added to the main queue because fetchEvents was running asynchronously and was getting the data after viewDidLoad was done.
-        EventfulAPI.shared.fetchEvents { (events) in
-            self.events = events!
-            self.eventsTomorrow.append(events!.first!)
-            var counter = 1
-            for eachEvent in self.events {
-                print("****Event #: ", counter)
-                counter += 1
-                print("****Event img url:", eachEvent.eventImageUrl)
-            }
-
-            for eachEvent in self.events {
-                 EventfulAPI.shared.fetchEventPhoto(event: eachEvent, completion: { (image) in
-                    if image != nil {
-                        self.imageCache[eachEvent.eventImageUrl!] = image
-                    } else {
-                        //assing a placeholder image
-                    }
-                 })
-            }
-        }
-        self.loadDefaultImages()
     }
 
     func loadDefaultImages() {
@@ -152,11 +146,9 @@ extension TimelineViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
 
                 if indexPath.row == 0 {
-                    let img = defaultImagesList[0].cropImageForTimelineViewWithRespectToInitialSize()
-                    cell.eventImage.image = img.imageWithGradient()
+                    cell.eventImage.image = defaultImagesList[0]
                 } else {
-                    let img = defaultImagesList[Int(indexPath.row % defaultImagesList.count)].cropImageForTimelineViewWithRespectToInitialSize()
-                    cell.eventImage.image = img.imageWithGradient()
+                    cell.eventImage.image = defaultImagesList[Int(indexPath.row % defaultImagesList.count)]
                 }
 
         }

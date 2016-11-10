@@ -17,8 +17,7 @@ class Event {
     let eventStartTime: String?
 //    let eventPrice: String?
     let eventImageUrl: String?
-//    let eventImageDictionary: [
-//    String: Any]
+    let allDayFlag: Bool
     
     //let eventAddress: String?
     let eventDescription: String?
@@ -28,8 +27,10 @@ class Event {
         
         if let eventTitle = jsonDictionary["title"] as? String {
 
-            if let alldayFlagSet = jsonDictionary["all_day"] as? String, alldayFlagSet == "2" {
-                return nil
+            if let alldayFlag = jsonDictionary["all_day"] as? String, (alldayFlag == "2" || alldayFlag == "1") {
+                self.allDayFlag = true
+            } else {
+                self.allDayFlag = false
             }
 
 
