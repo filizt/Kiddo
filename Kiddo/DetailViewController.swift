@@ -35,12 +35,11 @@ class DetailViewController: UIViewController {
 
         navigationController?.navigationBar.topItem?.title = event.eventTitle
 
-        if event.eventDescription == nil {
+        if event.eventDescription != nil {
             self.eventDescription.text = event.eventDescription?.html2AttributedString?.string
-        } else {
-            if event.eventUrl != nil {
-                moreInfoButton.isHidden = false
-            }
+        }
+        if event.eventUrl != nil {
+            moreInfoButton.isHidden = false
         }
 
     }
