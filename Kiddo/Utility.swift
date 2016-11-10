@@ -10,12 +10,11 @@ import UIKit
 
 extension UIImage {
      func cropImageForTimelineView() -> UIImage {
-        //image can be nil here!!!
-        //check if the image is at lest 20 X 20 here.
+
         let contextImage: UIImage = UIImage(cgImage: self.cgImage!)
 
-        let cgwidth: CGFloat = CGFloat(340.0)
-        let cgheight: CGFloat = CGFloat(200.0)
+        let cgwidth: CGFloat = CGFloat(375.0)
+        let cgheight: CGFloat = CGFloat(280.0)
 
         let posX: CGFloat = (self.size.width / 2.0) - cgwidth / 2
         let posY: CGFloat = (self.size.height / 2.0) - cgheight / 2
@@ -29,12 +28,11 @@ extension UIImage {
     }
 
     func cropImageForTimelineViewWithRespectToInitialSize() -> UIImage {
-        //image can be nil here!!!
-        //check if the image is at lest 20 X 20 here.
+
         let contextImage: UIImage = UIImage(cgImage: self.cgImage!)
 
         let cgwidth: CGFloat = CGFloat(480)
-        let cgheight: CGFloat = CGFloat(240)
+        let cgheight: CGFloat = CGFloat(280)
 
         let posX: CGFloat = (self.size.width / 2.0) - cgwidth / 2
         let posY: CGFloat = (self.size.height / 2.0) - cgheight / 2
@@ -64,8 +62,8 @@ extension UIImage {
 
         let gradient = CGGradient(colorsSpace: colorSpace, colors: colors, locations: locations)
 
-        let startPoint = CGPoint(x: self.size.width/3, y: 0)
-        let endPoint = CGPoint(x: self.size.width/10, y: self.size.height)
+        let startPoint = CGPoint(x: 0, y: 250)
+        let endPoint = CGPoint(x: 0, y: 430)
 
         context!.drawLinearGradient(gradient!, start: startPoint, end: endPoint, options: CGGradientDrawingOptions(rawValue: UInt32(0)))
 

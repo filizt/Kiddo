@@ -12,15 +12,15 @@ class TimelineViewController: UIViewController {
 
 
     @IBOutlet weak var timelineTableView: UITableView!
+    @IBOutlet weak var switchControl: UISegmentedControl!
 
     var events = [Event]() {
         didSet {
             self.timelineTableView.reloadData()
-            print(">>>>>>>>>>>>>>>\(events[0].eventStartTime)<<<<<<<<<<<<<<<<<<<<<")
         }
     }
-    
 
+    var eventsTomorrow = [Event]()
     var defaultImagesList = [UIImage]()
 
     //image cache
@@ -41,34 +41,56 @@ class TimelineViewController: UIViewController {
         
         self.timelineTableView.estimatedRowHeight = 100
         self.timelineTableView.rowHeight = UITableViewAutomaticDimension
-        
+
+        self.setUpNavigationBar()
+
+
         //This needed to be added to the main queue because fetchEvents was running asynchronously and was getting the data after viewDidLoad was done.
-        EventfulAPI.shared.fetchEvents { (events) in
+        EventfulAPI.shared.fetchEventsForToday { (events) in
             self.events = events!
-
-            var counter = 1
             for eachEvent in self.events {
-                print("****Event #: ", counter)
-                counter += 1
-                print("****Event img url:", eachEvent.eventImageUrl)
+             EventfulAPI.shared.fetchEventPhoto(event: eachEvent, completion: { (image) in
+                if image != nil {
+                    self.imageCache[eachEvent.eventImageUrl!] = image
+                }
+             })
             }
+             self.loadDefaultImages()
+        }
 
-            for eachEvent in self.events {
-                 EventfulAPI.shared.fetchEventPhoto(event: eachEvent, completion: { (image) in
+        EventfulAPI.shared.fetchEventsForTomorrow { (eventsTomorrow) in
+            self.eventsTomorrow = eventsTomorrow!
+            for eachEvent in self.eventsTomorrow {
+                EventfulAPI.shared.fetchEventPhoto(event: eachEvent, completion: { (image) in
                     if image != nil {
                         self.imageCache[eachEvent.eventImageUrl!] = image
-                    } else {
-                        //assing a placeholder image
                     }
-                 })
+                })
             }
         }
-        self.loadDefaultImages()
+    }
+
+    private func setUpNavigationBar() {
+        let newColor = UIColor(red: 255, green: 147, blue: 92)
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = newColor
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        //navigationController?.editButtonItem = backItem
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backItem
     }
 
     func loadDefaultImages() {
         self.defaultImagesList.append(UIImage(named: "kiddo_default_2")!)
         self.defaultImagesList.append(UIImage(named: "kiddo_default_1")!)
+    }
+
+    
+    @IBAction func switchButtonPressed(_ sender: UISegmentedControl) {
+
+        self.timelineTableView.reloadData()
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -93,13 +115,28 @@ class TimelineViewController: UIViewController {
 extension TimelineViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.events.count
+        if switchControl.selectedSegmentIndex == 0 {
+            return events.count
+        } else {
+            return eventsTomorrow.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        var tempArray = [Event]()
+
+        //0 means today, 1 means tomorrow
+        if switchControl.selectedSegmentIndex == 0 {
+            tempArray = events
+        } else {
+            tempArray = eventsTomorrow
+        }
+
+
         let cell = self.timelineTableView.dequeueReusableCell(withIdentifier: EventTableViewNib.identifier(), for: indexPath) as! EventTableViewNib
         
-        let currentEvent = self.events[indexPath.row]
+        let currentEvent = tempArray[indexPath.row]
         cell.event = currentEvent
         if currentEvent.eventImageUrl != nil {
             if let image = imageCache[currentEvent.eventImageUrl!] {
@@ -109,18 +146,14 @@ extension TimelineViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
 
                 if indexPath.row == 0 {
-                    let img = defaultImagesList[0].cropImageForTimelineViewWithRespectToInitialSize()
-                    cell.eventImage.image = img.imageWithGradient()
+                    cell.eventImage.image = defaultImagesList[0]
                 } else {
-                    let img = defaultImagesList[Int(indexPath.row % defaultImagesList.count)].cropImageForTimelineViewWithRespectToInitialSize()
-                    cell.eventImage.image = img.imageWithGradient()
+                    cell.eventImage.image = defaultImagesList[Int(indexPath.row % defaultImagesList.count)]
                 }
 
         }
 
-        //cell.eventImage.contentMode = UIViewContentMode.scaleAspectFill
-
-
+        //timelineTableView.tableFooterView = UIView()
 
         return cell
     }

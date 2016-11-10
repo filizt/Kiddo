@@ -12,13 +12,12 @@ class Event {
 
     let eventTitle: String
     let eventAddress: String?
-    let eventDate: String?
+    var eventDate: String?
     let eventVenueName: String?
     let eventStartTime: String?
 //    let eventPrice: String?
     let eventImageUrl: String?
-//    let eventImageDictionary: [
-//    String: Any]
+    let allDayFlag: Bool
     
     //let eventAddress: String?
     let eventDescription: String?
@@ -28,8 +27,10 @@ class Event {
         
         if let eventTitle = jsonDictionary["title"] as? String {
 
-            if let alldayFlagSet = jsonDictionary["all_day"] as? String, alldayFlagSet == "2" {
-                return nil
+            if let alldayFlag = jsonDictionary["all_day"] as? String, (alldayFlag == "2" || alldayFlag == "1") {
+                self.allDayFlag = true
+            } else {
+                self.allDayFlag = false
             }
 
             print(jsonDictionary)
@@ -40,6 +41,7 @@ class Event {
             let eventAddress = jsonDictionary["venue_address"] as? String
             
 
+            var newTimeString:String? = nil
             var newDateString:String? = nil
             if eventDate?.isEmpty != true {
                 let dateFormatter = DateFormatter()
@@ -49,12 +51,16 @@ class Event {
                 if let date = dateFormatter.date(from: eventDate!) {
                     dateFormatter.dateFormat = "HH:mm"
                     dateFormatter.timeStyle = .short
+                    newTimeString = dateFormatter.string(from: date)
+
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    dateFormatter.timeStyle = .long
                     newDateString = dateFormatter.string(from: date)
 
                 }
             }
-
-            eventStartTime = newDateString
+            self.eventDate = newDateString
+            self.eventStartTime = newTimeString
 
 
 
@@ -95,7 +101,6 @@ class Event {
 
         self.eventTitle = eventTitle
         self.eventVenueName = eventVenueName
-        self.eventDate = eventDate
         self.eventDescription = eventDescription
         self.eventAddress = eventAddress
 //        self.eventImageUrl = eventImageUrl
