@@ -141,7 +141,7 @@
 				TargetAttributes = {
 					BD68B9A21DD0F2F200CE39CA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = AWF997WQMM;
+						DevelopmentTeam = 286637PNYQ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -311,7 +311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AWF997WQMM;
+				DEVELOPMENT_TEAM = 286637PNYQ;
 				INFOPLIST_FILE = Kiddo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = filizk.Kiddo;
@@ -324,7 +324,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AWF997WQMM;
+				DEVELOPMENT_TEAM = 286637PNYQ;
 				INFOPLIST_FILE = Kiddo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = filizk.Kiddo;

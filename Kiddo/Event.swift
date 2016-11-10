@@ -32,6 +32,7 @@ class Event {
                 return nil
             }
 
+            print(jsonDictionary)
 
             let eventVenueName = jsonDictionary["venue_name"] as? String
             let eventDate = jsonDictionary["start_time"] as? String
