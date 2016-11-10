@@ -18,6 +18,7 @@ class Event {
 //    let eventPrice: String?
     let eventImageUrl: String?
     let allDayFlag: Bool
+    let eventUrl : String?
     
     //let eventAddress: String?
     let eventDescription: String?
@@ -39,6 +40,7 @@ class Event {
             let eventDate = jsonDictionary["start_time"] as? String
             let eventDescription = jsonDictionary["description"] as? String
             let eventAddress = jsonDictionary["venue_address"] as? String
+            let eventUrl = jsonDictionary["url"] as? String
             
 
             var newTimeString:String? = nil
@@ -103,7 +105,7 @@ class Event {
         self.eventVenueName = eventVenueName
         self.eventDescription = eventDescription
         self.eventAddress = eventAddress
-//        self.eventImageUrl = eventImageUrl
+        self.eventUrl = eventUrl
                     
     } else {
     

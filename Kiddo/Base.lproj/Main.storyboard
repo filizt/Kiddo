@@ -71,66 +71,77 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DYO-TX-Z2k">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="280" id="G83-bv-ldc"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="tab-m0-aA2"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="WHEN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mo1-Ds-q20">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.57647058823529407" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event: text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mi9-EX-7q7">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="MFv-qN-baa"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iF-Ph-Jpy" userLabel="Event Address">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Siu-Od-EJ5">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.57647058823529407" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When: text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbZ-2U-DBx">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="ABOUT THE EVENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-Nj-dwx">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.57647058823529407" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mi9-EX-7q7">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="WHEN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mo1-Ds-q20">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.57647058823529407" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="When: text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbZ-2U-DBx">
+                                <frame key="frameInset" minX="28" minY="498" width="274" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Siu-Od-EJ5">
+                                <frame key="frameInset" minX="26" minY="547" width="157" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.57647058823529407" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iF-Ph-Jpy" userLabel="Event Address">
+                                <frame key="frameInset" minX="26" minY="576" width="331" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjq-cG-c2X">
+                                <frame key="frameInset" minX="26" minY="426" width="211" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="KOS-lz-KPu"/>
+                                    <constraint firstAttribute="width" constant="211" id="jyT-8w-7V7"/>
+                                </constraints>
+                                <state key="normal" title="Tap here for more information."/>
+                                <connections>
+                                    <action selector="moreInformationButton:" destination="voi-bg-x8q" eventType="touchUpInside" id="NNi-ck-KyW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="mbZ-2U-DBx" secondAttribute="trailing" constant="73" id="5Qf-L7-dqa"/>
-                            <constraint firstAttribute="trailing" secondItem="Siu-Od-EJ5" secondAttribute="trailing" constant="190" id="85S-EB-l5o"/>
+                            <constraint firstItem="Siu-Od-EJ5" firstAttribute="leading" secondItem="LVf-Nj-dwx" secondAttribute="leading" id="3AU-IK-sfm"/>
+                            <constraint firstItem="mi9-EX-7q7" firstAttribute="leading" secondItem="LVf-Nj-dwx" secondAttribute="leading" id="47M-ch-PQ2"/>
+                            <constraint firstItem="mbZ-2U-DBx" firstAttribute="leading" secondItem="cJs-0j-HFp" secondAttribute="leadingMargin" constant="12" id="5Tx-oK-r9J"/>
+                            <constraint firstItem="cjq-cG-c2X" firstAttribute="top" secondItem="mi9-EX-7q7" secondAttribute="bottom" constant="8" id="FxJ-9j-hq1"/>
+                            <constraint firstItem="Siu-Od-EJ5" firstAttribute="top" secondItem="mbZ-2U-DBx" secondAttribute="bottom" constant="28" id="H9Y-Vl-Grb"/>
                             <constraint firstItem="DYO-TX-Z2k" firstAttribute="top" secondItem="2as-L2-j5u" secondAttribute="bottom" id="JE4-cE-pa6"/>
+                            <constraint firstItem="mbZ-2U-DBx" firstAttribute="leading" secondItem="LVf-Nj-dwx" secondAttribute="leading" id="JfI-Ak-f1f"/>
+                            <constraint firstItem="mi9-EX-7q7" firstAttribute="leading" secondItem="cJs-0j-HFp" secondAttribute="leadingMargin" constant="12" id="JhI-u1-xsM"/>
                             <constraint firstItem="DYO-TX-Z2k" firstAttribute="leading" secondItem="cJs-0j-HFp" secondAttribute="leading" id="JpS-ie-pWc"/>
-                            <constraint firstAttribute="trailing" secondItem="Mo1-Ds-q20" secondAttribute="trailing" constant="296" id="Mss-Vj-YbC"/>
-                            <constraint firstItem="mi9-EX-7q7" firstAttribute="top" secondItem="LVf-Nj-dwx" secondAttribute="bottom" constant="8" id="T3q-uD-uao"/>
-                            <constraint firstItem="Mo1-Ds-q20" firstAttribute="top" secondItem="0iF-Ph-Jpy" secondAttribute="bottom" constant="27" id="UOp-Oe-ogo"/>
-                            <constraint firstAttribute="trailing" secondItem="mi9-EX-7q7" secondAttribute="trailing" id="Wfn-kR-8ZL"/>
+                            <constraint firstItem="Mo1-Ds-q20" firstAttribute="top" secondItem="cjq-cG-c2X" secondAttribute="bottom" constant="14" id="LPH-hp-2sv"/>
+                            <constraint firstItem="Siu-Od-EJ5" firstAttribute="leading" secondItem="cJs-0j-HFp" secondAttribute="leadingMargin" constant="10" id="OhT-Nh-xHi"/>
+                            <constraint firstItem="LVf-Nj-dwx" firstAttribute="top" secondItem="DYO-TX-Z2k" secondAttribute="bottom" constant="25" id="PHO-vm-t1g"/>
+                            <constraint firstItem="LVf-Nj-dwx" firstAttribute="leading" secondItem="cJs-0j-HFp" secondAttribute="leadingMargin" constant="12" id="PLG-Tj-dt4"/>
+                            <constraint firstItem="Mo1-Ds-q20" firstAttribute="leading" secondItem="LVf-Nj-dwx" secondAttribute="leading" id="QZc-dp-dVY"/>
                             <constraint firstAttribute="trailing" secondItem="DYO-TX-Z2k" secondAttribute="trailing" id="X3b-Mj-R4d"/>
-                            <constraint firstItem="Mo1-Ds-q20" firstAttribute="leading" secondItem="cJs-0j-HFp" secondAttribute="leading" constant="28" id="ahT-hV-xg8"/>
-                            <constraint firstItem="0iF-Ph-Jpy" firstAttribute="leading" secondItem="cJs-0j-HFp" secondAttribute="leading" constant="28" id="enm-SW-13i"/>
-                            <constraint firstAttribute="trailing" secondItem="0iF-Ph-Jpy" secondAttribute="trailing" constant="16" id="h9z-Os-ZW0"/>
-                            <constraint firstItem="Siu-Od-EJ5" firstAttribute="top" secondItem="mi9-EX-7q7" secondAttribute="bottom" constant="13" id="kvj-Et-vZV"/>
-                            <constraint firstItem="mi9-EX-7q7" firstAttribute="leading" secondItem="cJs-0j-HFp" secondAttribute="leading" constant="28" id="leY-In-xY6"/>
-                            <constraint firstItem="mbZ-2U-DBx" firstAttribute="top" secondItem="Mo1-Ds-q20" secondAttribute="bottom" constant="8" id="lxa-PM-i1n"/>
-                            <constraint firstItem="0iF-Ph-Jpy" firstAttribute="top" secondItem="Siu-Od-EJ5" secondAttribute="bottom" constant="8" id="mcR-v8-xfq"/>
-                            <constraint firstItem="LVf-Nj-dwx" firstAttribute="top" secondItem="DYO-TX-Z2k" secondAttribute="bottom" constant="25" id="mzq-Jx-nQi"/>
-                            <constraint firstItem="LVf-Nj-dwx" firstAttribute="leading" secondItem="cJs-0j-HFp" secondAttribute="leadingMargin" constant="12" id="r3p-qL-5rr"/>
-                            <constraint firstItem="mbZ-2U-DBx" firstAttribute="leading" secondItem="cJs-0j-HFp" secondAttribute="leading" constant="28" id="uUB-eL-qDh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LVf-Nj-dwx" secondAttribute="trailing" constant="179" id="xtw-TG-67T"/>
-                            <constraint firstItem="Siu-Od-EJ5" firstAttribute="leading" secondItem="cJs-0j-HFp" secondAttribute="leading" constant="28" id="yy9-9s-JjA"/>
+                            <constraint firstItem="0iF-Ph-Jpy" firstAttribute="top" secondItem="Siu-Od-EJ5" secondAttribute="bottom" constant="8" id="apY-BC-5pk"/>
+                            <constraint firstItem="cjq-cG-c2X" firstAttribute="leading" secondItem="cJs-0j-HFp" secondAttribute="leadingMargin" constant="12" id="c18-fL-ej8"/>
+                            <constraint firstItem="Mo1-Ds-q20" firstAttribute="leading" secondItem="cJs-0j-HFp" secondAttribute="leadingMargin" constant="12" id="cUf-Kv-5yj"/>
+                            <constraint firstItem="0iF-Ph-Jpy" firstAttribute="leading" secondItem="LVf-Nj-dwx" secondAttribute="leading" id="fLb-fA-bo8"/>
+                            <constraint firstItem="0iF-Ph-Jpy" firstAttribute="leading" secondItem="cJs-0j-HFp" secondAttribute="leadingMargin" constant="10" id="nt2-Bh-G71"/>
+                            <constraint firstItem="mi9-EX-7q7" firstAttribute="top" secondItem="LVf-Nj-dwx" secondAttribute="bottom" constant="8" id="wcW-7L-nDW"/>
+                            <constraint firstItem="mbZ-2U-DBx" firstAttribute="top" secondItem="Mo1-Ds-q20" secondAttribute="bottom" constant="8" id="z1m-5b-cLi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="L6C-hq-ggT"/>
@@ -139,6 +150,7 @@
                         <outlet property="eventDescription" destination="mi9-EX-7q7" id="94M-yY-NB5"/>
                         <outlet property="eventImage" destination="DYO-TX-Z2k" id="SZr-2k-WNH"/>
                         <outlet property="eventStartTime" destination="mbZ-2U-DBx" id="zT5-vv-1Hw"/>
+                        <outlet property="moreInfoButton" destination="cjq-cG-c2X" id="B56-eM-Dbe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdv-tQ-HZd" userLabel="First Responder" sceneMemberID="firstResponder"/>

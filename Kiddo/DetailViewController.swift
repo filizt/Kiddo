@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class DetailViewController: UIViewController {
     
@@ -21,28 +22,11 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var eventStartTime: UILabel!
     
+    @IBOutlet weak var moreInfoButton: UIButton!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.eventDescription.text = event.eventDescription
-        let eventD = event.eventDescription
-        let replacedPTag = eventD?.replacingOccurrences(of: "<p>", with: "", options: .literal, range: nil)
-        let replacedClosedPTag = replacedPTag?.replacingOccurrences(of: "</p>", with: "", options: .literal, range: nil)
-
-        let replacedBRTag = replacedClosedPTag?.replacingOccurrences(of: "<br>", with: "", options: .literal, range: nil)
-        
-        let replacedClosedBRTag = replacedBRTag?.replacingOccurrences(of: "</br>", with: "", options: .literal, range: nil)
-
-
-        print("OUR STRINGS")
-        print("\(eventD)")
-        print("\(replacedClosedBRTag)")
-        
-        self.eventDescription.text = replacedClosedBRTag
-        
-//        stringByReplacingOccurrencesOfString("(?i)<p\\b[^<]*>\\s*</p>", withString: "", options: .RegularExpressionSearch, range: nil)
-        
         self.eventAddress.text = event.eventAddress
         self.eventStartTime.text = event.eventStartTime
 
@@ -51,12 +35,25 @@ class DetailViewController: UIViewController {
 
         navigationController?.navigationBar.topItem?.title = event.eventTitle
 
-        if event.eventDescription != nil {
+        if event.eventDescription == nil {
             self.eventDescription.text = event.eventDescription?.html2AttributedString?.string
+        } else {
+            if event.eventUrl != nil {
+                moreInfoButton.isHidden = false
+            }
         }
 
     }
 
+    @IBAction func moreInformationButton(_ sender: AnyObject) {
+        self.presentSafariViewController(url: event.eventUrl!)
+
+    }
+
+    func presentSafariViewController(url: String) {
+        let safariVC = SFSafariViewController(url:URL(string: url)!)
+        self.present(safariVC, animated: true, completion: nil)
+    }
 
 
 }
