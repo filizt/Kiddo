@@ -24,8 +24,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\(event.eventDescription)<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
-        
+
 //        self.eventDescription.text = event.eventDescription
         let eventD = event.eventDescription
         let replacedPTag = eventD?.replacingOccurrences(of: "<p>", with: "", options: .literal, range: nil)
@@ -51,6 +50,10 @@ class DetailViewController: UIViewController {
         self.eventImage.contentMode = .scaleAspectFill
 
         navigationController?.navigationBar.topItem?.title = event.eventTitle
+
+        if event.eventDescription != nil {
+            self.eventDescription.text = event.eventDescription?.html2AttributedString?.string
+        }
 
     }
 

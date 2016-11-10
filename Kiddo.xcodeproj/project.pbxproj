@@ -72,6 +72,7 @@
 				BD68B9BD1DD0F99F00CE39CA /* View */,
 				BD68B9BA1DD0F98000CE39CA /* View Controller */,
 				BD68B9A61DD0F2F300CE39CA /* AppDelegate.swift */,
+				50584E061DD122ED00A2BEA9 /* UIExtensions.swift */,
 				BD68B9CA1DD39FF100CE39CA /* Utility.swift */,
 				BD68B9AA1DD0F2F300CE39CA /* Main.storyboard */,
 				BD68B9AD1DD0F2F300CE39CA /* Assets.xcassets */,
@@ -86,7 +87,6 @@
 			children = (
 				BD68B9BE1DD0FA1C00CE39CA /* DetailViewController.swift */,
 				C26E626E1DD1038C00BDC568 /* TimelineViewController.swift */,
-				50584E061DD122ED00A2BEA9 /* UIExtensions.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";

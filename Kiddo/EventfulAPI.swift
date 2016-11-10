@@ -34,7 +34,7 @@ class EventfulAPI {
         self.urlComponents.queryItems?.append(URLQueryItem(name:"category", value: "family_fun_kids"))
         self.urlComponents.queryItems?.append(URLQueryItem(name:"location", value: "seattle"))
         self.urlComponents.queryItems?.append(URLQueryItem(name:"image_sizes", value: "large"))
-        self.urlComponents.queryItems?.append(URLQueryItem(name:"date", value: "Today"))
+        self.urlComponents.queryItems?.append(URLQueryItem(name:"date", value: "Future"))
         //self.urlComponents.queryItems?.append(URLQueryItem(name:"sort_order", value: "popularity"))
         self.urlComponents.queryItems?.append(URLQueryItem(name:"sort_direction", value: "ascending"))
         self.urlComponents.queryItems?.append(URLQueryItem(name:"page_size", value: "20"))

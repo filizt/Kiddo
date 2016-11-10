@@ -140,17 +140,14 @@ extension TimelineViewController: UITableViewDataSource, UITableViewDelegate {
         cell.event = currentEvent
         if currentEvent.eventImageUrl != nil {
             if let image = imageCache[currentEvent.eventImageUrl!] {
-                let img = image.cropImageForTimelineView()
-                cell.eventImage.image = img.imageWithGradient()
+                cell.eventImage.image = image.cropImageForTimelineView()
             }
         } else {
-
-                if indexPath.row == 0 {
-                    cell.eventImage.image = defaultImagesList[0]
-                } else {
-                    cell.eventImage.image = defaultImagesList[Int(indexPath.row % defaultImagesList.count)]
-                }
-
+            if indexPath.row == 0 {
+                cell.eventImage.image = defaultImagesList[0]
+            } else {
+                cell.eventImage.image = defaultImagesList[Int(indexPath.row % defaultImagesList.count)]
+            }
         }
 
         //timelineTableView.tableFooterView = UIView()
