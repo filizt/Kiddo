@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
         self.eventImage.image = self.image
         self.eventImage.contentMode = .scaleAspectFill
 
-        print(event.eventDate)
+        navigationController?.navigationBar.topItem?.title = event.eventTitle
 
     }
 

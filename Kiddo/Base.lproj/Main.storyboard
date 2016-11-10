@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Timeline View Controller-->
+        <!--EVENTS FOR SEATTLE-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="TimelineViewController" customModule="Kiddo" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,9 +45,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bl0-SP-8aP" secondAttribute="bottom" id="xSn-JK-8rc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yeb-TK-yO3">
-                        <nil key="title"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="EVENTS FOR SEATTLE" id="yeb-TK-yO3"/>
                     <connections>
                         <outlet property="switchControl" destination="3l0-vv-Hp5" id="Rsl-Mp-WeP"/>
                         <outlet property="timelineTableView" destination="bl0-SP-8aP" id="Ur3-Dv-amR"/>

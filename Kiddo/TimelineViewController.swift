@@ -43,7 +43,26 @@ class TimelineViewController: UIViewController {
         
         self.timelineTableView.estimatedRowHeight = 100
         self.timelineTableView.rowHeight = UITableViewAutomaticDimension
-        
+
+
+        //With the extension - 255 147 92
+        let newColor = UIColor(red: 255, green: 147, blue: 92)
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = newColor
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        //navigationController?.editButtonItem = backItem
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backItem
+
+        //self.navigationController?.navigationBar.frame = CGRect(x:0, y:0, width:320, height:100)  // Here you can set you Width and Height for your navBar
+
+       // self.view.addSubview(navBar)
+        //var newSize:CGSize = CGSizeMake(size.width, 87)
+
+        self.title = "SEATTLE EVENTS"
+
+
         //This needed to be added to the main queue because fetchEvents was running asynchronously and was getting the data after viewDidLoad was done.
         EventfulAPI.shared.fetchEvents { (events) in
             self.events = events!
