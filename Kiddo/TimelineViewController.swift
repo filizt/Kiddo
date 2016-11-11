@@ -82,15 +82,25 @@ class TimelineViewController: UIViewController {
     }
 
     func loadDefaultImages() {
-        self.defaultImagesList.append(UIImage(named: "kiddo_default_2")!)
+        self.defaultImagesList.append(UIImage(named: "kiddo_default_10")!)
+        self.defaultImagesList.append(UIImage(named: "kiddo_default_11")!)
+        self.defaultImagesList.append(UIImage(named: "kiddo_default_3")!)
+        self.defaultImagesList.append(UIImage(named: "kiddo_default_4")!)
+        self.defaultImagesList.append(UIImage(named: "kiddo_default_5")!)
+        //self.defaultImagesList.append(UIImage(named: "kiddo_default_6")!)
+        self.defaultImagesList.append(UIImage(named: "kiddo_default_7")!)
+        self.defaultImagesList.append(UIImage(named: "kiddo_default_8")!)
+        //self.defaultImagesList.append(UIImage(named: "kiddo_default_9")!)
         self.defaultImagesList.append(UIImage(named: "kiddo_default_1")!)
+        self.defaultImagesList.append(UIImage(named: "kiddo_default_2")!)
+
     }
 
     
     @IBAction func switchButtonPressed(_ sender: UISegmentedControl) {
-
         self.timelineTableView.reloadData()
-
+        let indexPath = IndexPath(row: 0, section: 0)
+        self.timelineTableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
