@@ -7,29 +7,68 @@
 //
 
 import UIKit
+import SafariServices
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var event: Event!
+    var image: UIImage!
+
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.separatorStyle = .none
 
-        // Do any additional setup after loading the view.
+        let nib = UINib(nibName: "detailCell", bundle: Bundle.main)
+        self.tableView.register(nib, forCellReuseIdentifier: DetailTableViewCell.identifier())
+        self.title = event.eventTitle
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
-    */
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier(), for: indexPath) as! DetailTableViewCell
+
+        cell.eventImage.image = self.image
+        cell.eventImage.contentMode = .scaleAspectFill
+
+        if event.eventDescription != nil {
+            let text = event.eventDescription?.html2AttributedString?.string
+            print("***", text)
+            cell.eventDescription.text = text
+        } else {
+            cell.eventDescription.text = "Please find more information about this event in below link."
+        }
+
+        cell.eventLocation.text = event.eventVenueName
+        cell.eventDate.text = event.eventStartTime
+
+
+        return cell
+    }
+
+
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if event.eventUrl != nil {
+            presentSafariViewController(url: event.eventUrl!)
+        }
+    }
+
+    func presentSafariViewController(url: String) {
+        let safariVC = SFSafariViewController(url:URL(string: url)!)
+        self.present(safariVC, animated: true, completion: nil)
+    }
+
+
+
 
 }

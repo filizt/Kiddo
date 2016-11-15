@@ -7,23 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50584E071DD122ED00A2BEA9 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50584E061DD122ED00A2BEA9 /* UIExtensions.swift */; };
+		BD3751CC1DD57141005620E0 /* detailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD3751CB1DD57141005620E0 /* detailCell.xib */; };
+		BD3751CE1DD57238005620E0 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3751CD1DD57238005620E0 /* DetailTableViewCell.swift */; };
 		BD68B9A71DD0F2F300CE39CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD68B9A61DD0F2F300CE39CA /* AppDelegate.swift */; };
 		BD68B9AC1DD0F2F300CE39CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD68B9AA1DD0F2F300CE39CA /* Main.storyboard */; };
 		BD68B9AE1DD0F2F300CE39CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD68B9AD1DD0F2F300CE39CA /* Assets.xcassets */; };
 		BD68B9B11DD0F2F300CE39CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD68B9AF1DD0F2F300CE39CA /* LaunchScreen.storyboard */; };
-		BD68B9B91DD0F8F200CE39CA /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD68B9B81DD0F8F200CE39CA /* TimelineViewController.swift */; };
 		BD68B9BF1DD0FA1C00CE39CA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD68B9BE1DD0FA1C00CE39CA /* DetailViewController.swift */; };
+		BD68B9C91DD1296E00CE39CA /* EventfulAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD68B9C81DD1296E00CE39CA /* EventfulAPI.swift */; };
+		BD68B9CB1DD39FF100CE39CA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD68B9CA1DD39FF100CE39CA /* Utility.swift */; };
+		C26E626F1DD1038C00BDC568 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26E626E1DD1038C00BDC568 /* TimelineViewController.swift */; };
+		C26E62711DD103B900BDC568 /* eventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26E62701DD103B900BDC568 /* eventCell.xib */; };
+		C26E62731DD1098600BDC568 /* EventTableViewNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26E62721DD1098600BDC568 /* EventTableViewNib.swift */; };
+		C26E62751DD111AF00BDC568 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26E62741DD111AF00BDC568 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50584E061DD122ED00A2BEA9 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		BD3751CB1DD57141005620E0 /* detailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = detailCell.xib; sourceTree = "<group>"; };
+		BD3751CD1DD57238005620E0 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		BD68B9A31DD0F2F200CE39CA /* Kiddo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiddo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD68B9A61DD0F2F300CE39CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD68B9AB1DD0F2F300CE39CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD68B9AD1DD0F2F300CE39CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD68B9B01DD0F2F300CE39CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD68B9B21DD0F2F300CE39CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BD68B9B81DD0F8F200CE39CA /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineViewController.swift; path = ../TimelineViewController.swift; sourceTree = "<group>"; };
 		BD68B9BE1DD0FA1C00CE39CA /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BD68B9C81DD1296E00CE39CA /* EventfulAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventfulAPI.swift; sourceTree = "<group>"; };
+		BD68B9CA1DD39FF100CE39CA /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		C26E626E1DD1038C00BDC568 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		C26E62701DD103B900BDC568 /* eventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = eventCell.xib; path = ../eventCell.xib; sourceTree = "<group>"; };
+		C26E62721DD1098600BDC568 /* EventTableViewNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewNib.swift; sourceTree = "<group>"; };
+		C26E62741DD111AF00BDC568 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +72,14 @@
 		BD68B9A51DD0F2F300CE39CA /* Kiddo */ = {
 			isa = PBXGroup;
 			children = (
-				BD68B9BD1DD0F99F00CE39CA /* View */,
 				BD68B9BB1DD0F98F00CE39CA /* Model */,
+				BD68B9BD1DD0F99F00CE39CA /* View */,
 				BD68B9BA1DD0F98000CE39CA /* View Controller */,
 				BD68B9A61DD0F2F300CE39CA /* AppDelegate.swift */,
+				50584E061DD122ED00A2BEA9 /* UIExtensions.swift */,
+				BD68B9CA1DD39FF100CE39CA /* Utility.swift */,
 				BD68B9AA1DD0F2F300CE39CA /* Main.storyboard */,
+				BD3751CB1DD57141005620E0 /* detailCell.xib */,
 				BD68B9AD1DD0F2F300CE39CA /* Assets.xcassets */,
 				BD68B9AF1DD0F2F300CE39CA /* LaunchScreen.storyboard */,
 				BD68B9B21DD0F2F300CE39CA /* Info.plist */,
@@ -71,8 +90,8 @@
 		BD68B9BA1DD0F98000CE39CA /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BD68B9B81DD0F8F200CE39CA /* TimelineViewController.swift */,
 				BD68B9BE1DD0FA1C00CE39CA /* DetailViewController.swift */,
+				C26E626E1DD1038C00BDC568 /* TimelineViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -80,6 +99,9 @@
 		BD68B9BB1DD0F98F00CE39CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C26E62741DD111AF00BDC568 /* Event.swift */,
+				C26E62701DD103B900BDC568 /* eventCell.xib */,
+				BD68B9C81DD1296E00CE39CA /* EventfulAPI.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -87,6 +109,8 @@
 		BD68B9BD1DD0F99F00CE39CA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C26E62721DD1098600BDC568 /* EventTableViewNib.swift */,
+				BD3751CD1DD57238005620E0 /* DetailTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -123,7 +147,7 @@
 				TargetAttributes = {
 					BD68B9A21DD0F2F200CE39CA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = AWF997WQMM;
+						DevelopmentTeam = 286637PNYQ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -151,9 +175,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C26E62711DD103B900BDC568 /* eventCell.xib in Resources */,
 				BD68B9B11DD0F2F300CE39CA /* LaunchScreen.storyboard in Resources */,
 				BD68B9AE1DD0F2F300CE39CA /* Assets.xcassets in Resources */,
 				BD68B9AC1DD0F2F300CE39CA /* Main.storyboard in Resources */,
+				BD3751CC1DD57141005620E0 /* detailCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,9 +190,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3751CE1DD57238005620E0 /* DetailTableViewCell.swift in Sources */,
+				C26E62731DD1098600BDC568 /* EventTableViewNib.swift in Sources */,
+				BD68B9C91DD1296E00CE39CA /* EventfulAPI.swift in Sources */,
 				BD68B9BF1DD0FA1C00CE39CA /* DetailViewController.swift in Sources */,
 				BD68B9A71DD0F2F300CE39CA /* AppDelegate.swift in Sources */,
-				BD68B9B91DD0F8F200CE39CA /* TimelineViewController.swift in Sources */,
+				BD68B9CB1DD39FF100CE39CA /* Utility.swift in Sources */,
+				50584E071DD122ED00A2BEA9 /* UIExtensions.swift in Sources */,
+				C26E626F1DD1038C00BDC568 /* TimelineViewController.swift in Sources */,
+				C26E62751DD111AF00BDC568 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +319,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AWF997WQMM;
+				DEVELOPMENT_TEAM = 286637PNYQ;
 				INFOPLIST_FILE = Kiddo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = filizk.Kiddo;
@@ -300,7 +332,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AWF997WQMM;
+				DEVELOPMENT_TEAM = 286637PNYQ;
 				INFOPLIST_FILE = Kiddo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = filizk.Kiddo;
@@ -328,6 +360,7 @@
 				BD68B9B71DD0F2F300CE39CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
