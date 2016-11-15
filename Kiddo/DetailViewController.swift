@@ -49,7 +49,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         }
 
         cell.eventLocation.text = event.eventVenueName
-        cell.eventDate.text = event.eventDate
+        cell.eventDate.text = event.eventStartTime
 
 
         return cell
